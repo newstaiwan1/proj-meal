@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <div class="container">
+    <h1>Meal Planner<span class="accent">.</span></h1>
+    <p class="subtitle">Random recipe ideas — powered by TheMealDB</p>
+
+    <!-- Controls -->
+    <div class="controls">
+      <select id="categorySelect">
+        <option value="">All categories</option>
+      </select>
+      <select id="areaSelect">
+        <option value="">All cuisines</option>
+      </select>
+      <button id="surpriseBtn">🎲 Surprise me</button>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader" hidden>
+      <div class="spinner"></div>
+      <span>Finding a meal…</span>
+    </div>
+
+    <!-- Error -->
+    <div class="error" id="error" hidden></div>
+
+    <!-- Meal Card -->
+    <div class="meal-card" id="mealCard" hidden>
+      <div class="meal-image-wrap">
+        <img id="mealImage" src="" alt="" />
+        <div class="meal-badges">
+          <span class="badge" id="mealCategory"></span>
+          <span class="badge badge-area" id="mealArea"></span>
+        </div>
+      </div>
+      <div class="meal-details">
+        <h2 id="mealName"></h2>
+        <div class="meal-tags" id="mealTags"></div>
+
+        <div class="section-label">Ingredients</div>
+        <ul class="ingredients" id="ingredients"></ul>
+
+        <div class="section-label instructions-label">
+          Instructions
+          <button class="toggle-btn" id="toggleInstructions">Show</button>
+        </div>
+        <div class="instructions" id="instructions" hidden></div>
+
+        <div class="meal-actions">
+          <div class="save-wrap">
+            <span class="save-label">Add to plan:</span>
+            <div class="day-btns" id="dayBtns">
+              <button class="day-btn" data-day="Mon">Mon</button>
+              <button class="day-btn" data-day="Tue">Tue</button>
+              <button class="day-btn" data-day="Wed">Wed</button>
+              <button class="day-btn" data-day="Thu">Thu</button>
+              <button class="day-btn" data-day="Fri">Fri</button>
+              <button class="day-btn" data-day="Sat">Sat</button>
+              <button class="day-btn" data-day="Sun">Sun</button>
+            </div>
+          </div>
+          <a class="yt-btn" id="ytBtn" href="" target="_blank" rel="noopener" hidden>▶ Watch on YouTube</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weekly Plan -->
+    <div class="plan-section" id="planSection" hidden>
+      <div class="plan-header">
+        <span class="section-label" style="margin:0">Weekly Plan</span>
+        <button class="clear-plan-btn" id="clearPlanBtn">Clear all</button>
+      </div>
+      <div class="plan-grid" id="planGrid"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
