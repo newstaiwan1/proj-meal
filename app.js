@@ -5,6 +5,7 @@ const DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
 const categorySelect     = document.getElementById('categorySelect');
 const areaSelect         = document.getElementById('areaSelect');
 const surpriseBtn        = document.getElementById('surpriseBtn');
+const breakfastBtn = document.getElementById('breakfastBtn');
 const loader             = document.getElementById('loader');
 const errorDiv           = document.getElementById('error');
 const mealCard           = document.getElementById('mealCard');
@@ -256,6 +257,12 @@ clearPlanBtn.addEventListener('click', () => {
 categorySelect.addEventListener('change', () => { areaSelect.value = ''; surprise(); });
 areaSelect.addEventListener('change', () => { categorySelect.value = ''; surprise(); });
 surpriseBtn.addEventListener('click', surprise);
+
+breakfastBtn.addEventListener('click', () => {
+  categorySelect.value = 'Breakfast';
+  areaSelect.value = '';
+  surprise();
+});
 
 // ── Init ─────────────────────────────────────────────────────────
 loadFilters();
