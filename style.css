@@ -71,7 +71,7 @@ select {
 select:focus { border-color: #f43f5e; }
 select option { background: #1a1a2e; }
 
-#surpriseBtn {
+#surpriseBtn, #breakfastBtn {
   background: linear-gradient(135deg, #f43f5e, #be123c);
   border: none;
   color: #fff;
@@ -83,8 +83,12 @@ select option { background: #1a1a2e; }
   cursor: pointer;
   transition: opacity 0.2s;
 }
-#surpriseBtn:hover { opacity: 0.85; }
-#surpriseBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+#surpriseBtn:hover, #breakfastBtn:hover { opacity: 0.85; }
+#surpriseBtn:disabled, #breakfastBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+#breakfastBtn {
+  background: linear-gradient(135deg, #FFBB00, #DD9900);
+}
 
 /* Loader */
 .loader {
